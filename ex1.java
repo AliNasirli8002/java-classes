@@ -62,11 +62,11 @@ class Main {
     public static void ex9(){
         String str = "test";
         System.out.println(str.replace("t", "h"));
+        System.out.println(str.replace("t", "a"));
     }
     
     public static void ex10(){
         StringBuffer strb = new StringBuffer("Testing Testing");
-        strb.append(" Testing");
         strb.reverse();
         System.out.println(strb);
     }
