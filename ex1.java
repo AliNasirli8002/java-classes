@@ -53,7 +53,7 @@ class Main {
         System.out.println(str.indexOf("e"));
         System.out.println(str.lastIndexOf("t"));
     }
-    
+
     public static void ex8(){
         String str = "Test";
         System.out.println(str.substring(1));
@@ -66,6 +66,7 @@ class Main {
     
     public static void ex10(){
         StringBuffer strb = new StringBuffer("Testing Testing");
+        strb.append(" Testing");
         strb.reverse();
         System.out.println(strb);
     }
