@@ -60,9 +60,9 @@ public class Main {
                     System.out.println("Enter Account Number: ");
                     String selectAccountNumber = myObj.nextLine();
                     Account selectedAccount = null;
-                    for (Account acc : accountArr) {
-                        if (acc != null && acc.getAccountNumber().equals(selectAccountNumber)) {
-                            selectedAccount = acc;
+                    for (Account account : accountArr) {
+                        if (account != null && account.getAccountNumber().equals(selectAccountNumber)) {
+                            selectedAccount = account;
                             break;
                         }
                     }
@@ -97,7 +97,7 @@ public class Main {
                         }
                         System.out.println(optionNumber + ": Exit to Main Menu");
                         exitOption = optionNumber;
-                        String exitOptionStr = String.valueOf(exitOption);
+                        String exitOptionString = String.valueOf(exitOption);
                         String choice = myObj.nextLine();
                         if (choice.equals(depositOption)) {
                             System.out.println("Enter amount to deposit: ");
@@ -112,28 +112,29 @@ public class Main {
                         } else if (choice.equals(specialOption)) {
                             if (selectedAccount instanceof LoanAccount) {
                                 ((LoanAccount) selectedAccount).chargeInterest();
-                                System.out.println("Interest charged!\n");
+                                System.out.println("Interest charged\n");
                             } else if (selectedAccount instanceof DepositAccount) {
                                 ((DepositAccount) selectedAccount).addMonthlyBonus();
-                                System.out.println("Bonus applied!\n");
+                                System.out.println("Bonus applied\n");
                             } else {
                                 ((MortgageAccount) selectedAccount).addMonthlyFee();
-                                System.out.println("Installment paid!\n");
+                                System.out.println("Installment paid\n");
                             }
-                        } else if (choice.equals(exitOptionStr)) {
-                            System.out.println("Exiting to Main Menu...\n");
+                        } else if (choice.equals(exitOptionString)) {
+                            System.out.println("Exiting to Main Menu\n");
                             break;
                         } else {
-                            System.out.println("Invalid action. Please try again.\n");
+                            System.out.println("Invalid action\n");
                         }
                     }
                     break;
                 case "3":
-                    System.out.println("Exiting program.");
+                    System.out.println("Exiting program");
+                    myObj.close();
                     running = false;
                     break;
                 default:
-                    System.out.println("Invalid action. Please try again.\n");
+                    System.out.println("Invalid action\n");
             }
         }
     }
